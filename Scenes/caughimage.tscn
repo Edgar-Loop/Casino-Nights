@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://hyg7yuunra1p"]
+
+[ext_resource type="Script" uid="uid://dtd8o67a114sm" path="res://Scripts/caughimage.gd" id="1_emnul"]
+[ext_resource type="Texture2D" uid="uid://c8npjkb5ybqr" path="res://Assets/LibreSprites/Cn BadEndPrototype.png" id="1_w84dc"]
+
+[node name="Caughimage" type="Node2D" unique_id=754551091]
+script = ExtResource("1_emnul")
+
+[node name="CnBadEndPrototype" type="Sprite2D" parent="." unique_id=1492004415]
+position = Vector2(578.5, 326.49997)
+scale = Vector2(3.584375, 2.4960935)
+texture = ExtResource("1_w84dc")

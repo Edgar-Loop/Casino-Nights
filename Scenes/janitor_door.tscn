@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://crwn6cavrvotv"]
+
+[ext_resource type="Script" uid="uid://c30pot27oaqsp" path="res://Scripts/hiding_door.gd" id="1_j1anm"]
+[ext_resource type="Texture2D" uid="uid://klhftikc1cun" path="res://Assets/LibreSprites/Janitor Room Door CN.png" id="2_rppkb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6jor"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7wex"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ywnj"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqlyn"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_espo0"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plw6u"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbko3"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e8ix"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jarip"]
+atlas = ExtResource("2_rppkb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tf4ix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6jor")
+}],
+"loop": 0,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7wex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ywnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqlyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_espo0")
+}],
+"loop": 0,
+"name": &"door_closing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plw6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbko3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e8ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jarip")
+}],
+"loop": 0,
+"name": &"door_opening",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf4ix"]
+size = Vector2(15, 21)
+
+[node name="janitor_door" type="Node2D" unique_id=1431494753]
+script = ExtResource("1_j1anm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1683864526]
+sprite_frames = SubResource("SpriteFrames_tf4ix")
+animation = &"door_closing"
+autoplay = "closed"
+frame = 3
+frame_progress = 1.0
+
+[node name="interact_area" type="Area2D" parent="." unique_id=981479854]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_area" unique_id=912510649]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_tf4ix")

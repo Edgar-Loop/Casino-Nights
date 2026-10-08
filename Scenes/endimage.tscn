@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dy40f7ysmv5dj"]
+
+[ext_resource type="Texture2D" uid="uid://e2miel0ahdtc" path="res://Assets/LibreSprites/CN EndPrototype.png" id="1_0188w"]
+
+[node name="Endimage" type="Node2D" unique_id=898173388]
+
+[node name="CnEndPrototype" type="Sprite2D" parent="." unique_id=1425058692]
+position = Vector2(577.00006, 323.99997)
+scale = Vector2(3.6000004, 2.5234377)
+texture = ExtResource("1_0188w")

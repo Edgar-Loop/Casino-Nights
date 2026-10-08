@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dqhh1oa6mw27a"]
+
+[ext_resource type="PackedScene" uid="uid://drm47tlsudfqg" path="res://Scenes/background.tscn" id="1_6koui"]
+[ext_resource type="PackedScene" uid="uid://ddtfde0llg8ek" path="res://Scenes/player.tscn" id="2_3mrnv"]
+[ext_resource type="PackedScene" uid="uid://d0f5rl273ryx0" path="res://Scenes/security_bot.tscn" id="3_uurmw"]
+[ext_resource type="PackedScene" uid="uid://bn0v70ekjro5g" path="res://Scenes/security_bot_medium.tscn" id="4_3mrnv"]
+[ext_resource type="PackedScene" uid="uid://depvr2m326b2x" path="res://Scenes/security_bot_hard.tscn" id="5_uurmw"]
+[ext_resource type="PackedScene" uid="uid://crwn6cavrvotv" path="res://Scenes/janitor_door.tscn" id="6_dig14"]
+
+[node name="Prototype" type="Node2D" unique_id=1481921450]
+
+[node name="Node2D" parent="." unique_id=515646349 instance=ExtResource("1_6koui")]
+
+[node name="Player" parent="." unique_id=1872723064 instance=ExtResource("2_3mrnv")]
+position = Vector2(-483, 2)
+speed = 90
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2101570863]
+zoom = Vector2(6, 6)
+
+[node name="SecurityBot" parent="." unique_id=1842787356 instance=ExtResource("3_uurmw")]
+position = Vector2(-395, 15)
+speed = 45.0
+
+[node name="SecurityBot2" parent="." unique_id=2091356389 instance=ExtResource("4_3mrnv")]
+position = Vector2(94, 35)
+speed = 55.0
+
+[node name="SecurityBot3" parent="." unique_id=1257577345 instance=ExtResource("5_uurmw")]
+position = Vector2(566, 11)
+
+[node name="janitor_door" parent="." unique_id=1431494753 instance=ExtResource("6_dig14")]
+position = Vector2(-217, -14)

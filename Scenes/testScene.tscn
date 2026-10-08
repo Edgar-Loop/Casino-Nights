@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dv8hygi346fiy"]
+
+[ext_resource type="PackedScene" uid="uid://d0f5rl273ryx0" path="res://Scenes/security_bot.tscn" id="1_8xinf"]
+[ext_resource type="PackedScene" uid="uid://ddtfde0llg8ek" path="res://Scenes/player.tscn" id="2_4mqg7"]
+[ext_resource type="PackedScene" uid="uid://bn0v70ekjro5g" path="res://Scenes/security_bot_medium.tscn" id="3_7v7vq"]
+
+[node name="Node2D" type="Node2D" unique_id=825462337]
+
+[node name="SecurityBot" parent="." unique_id=1842787356 instance=ExtResource("1_8xinf")]
+position = Vector2(412, 192)
+
+[node name="Player" parent="." unique_id=1872723064 instance=ExtResource("2_4mqg7")]
+position = Vector2(323, 181)
+
+[node name="SecurityBot2" parent="." unique_id=1803414947 instance=ExtResource("3_7v7vq")]
+position = Vector2(257, 293)

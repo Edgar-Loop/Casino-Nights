@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://depvr2m326b2x"]
+
+[ext_resource type="Script" uid="uid://cgslvkicq2u1p" path="res://Scripts/security_bot_hard.gd" id="1_qo1tm"]
+[ext_resource type="Texture2D" uid="uid://dt7rjlg08cf31" path="res://Assets/LibreSprites/SecurityBot Floor CN.png" id="2_f3bpo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_haqyu"]
+radius = 8.75
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm336"]
+atlas = ExtResource("2_f3bpo")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fub61"]
+atlas = ExtResource("2_f3bpo")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haqyu"]
+atlas = ExtResource("2_f3bpo")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukfq3"]
+atlas = ExtResource("2_f3bpo")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqecj"]
+atlas = ExtResource("2_f3bpo")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn6jh"]
+atlas = ExtResource("2_f3bpo")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqeah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm336")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fub61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haqyu")
+}],
+"loop": 1,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukfq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqecj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn6jh")
+}],
+"loop": 1,
+"name": &"move_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hm336"]
+radius = 6.0
+height = 23.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qo1tm"]
+radius = 8.75
+height = 22.0
+
+[node name="SecurityBot" type="CharacterBody2D" unique_id=1842787356]
+script = ExtResource("1_qo1tm")
+speed = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=301732879]
+position = Vector2(-9, -1)
+shape = SubResource("CapsuleShape2D_haqyu")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1110583208]
+position = Vector2(10, 0)
+sprite_frames = SubResource("SpriteFrames_nqeah")
+animation = &"move_right"
+
+[node name="ScanArea" type="Area2D" parent="." unique_id=1908646351]
+visibility_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScanArea" unique_id=34045425]
+position = Vector2(14, 8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hm336")
+
+[node name="LoseTargetTimer" type="Timer" parent="." unique_id=1150118009]
+wait_time = 3.0
+one_shot = true
+
+[node name="TaseArea" type="Area2D" parent="." unique_id=675170383]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TaseArea" unique_id=130362173]
+position = Vector2(-9, -1)
+shape = SubResource("CapsuleShape2D_qo1tm")
+
+[connection signal="body_entered" from="ScanArea" to="." method="_on_scan_area_body_entered"]
+[connection signal="body_exited" from="ScanArea" to="." method="_on_scan_area_body_exited"]
+[connection signal="timeout" from="LoseTargetTimer" to="." method="_on_lose_target_timer_timeout"]

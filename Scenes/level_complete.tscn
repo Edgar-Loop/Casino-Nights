@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dffx6nmn6iil8"]
+
+[ext_resource type="Script" uid="uid://d2xgvrnx7lww8" path="res://Scripts/level_complete.gd" id="1_onuut"]
+[ext_resource type="Texture2D" uid="uid://d1ykgy11g6wyi" path="res://Assets/LibreSprites/Dealer Table CN.png" id="1_u5kwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn1xx"]
+size = Vector2(32, 23)
+
+[node name="LevelComplete" type="Node2D" unique_id=685382877]
+script = ExtResource("1_onuut")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1902641194]
+z_index = 1
+texture = ExtResource("1_u5kwf")
+
+[node name="interact_area" type="Area2D" parent="." unique_id=224253142]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_area" unique_id=2014629751]
+z_index = 1
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_sn1xx")
+
+[connection signal="area_entered" from="interact_area" to="." method="_on_interact_area_area_entered"]
