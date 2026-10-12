@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GAM234"
-run/main_scene="uid://dqhh1oa6mw27a"
+run/main_scene="uid://bgomaj1ten2an"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
