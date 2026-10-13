@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bgomaj1ten2an"]
+
+[ext_resource type="Texture2D" uid="uid://beeg5ff71o8lx" path="res://Assets/LibreSprites/Intro CN spreadsheet.png" id="1_juhg0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgtwh"]
+atlas = ExtResource("1_juhg0")
+region = Rect2(192, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6uer"]
+atlas = ExtResource("1_juhg0")
+region = Rect2(384, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a43kq"]
+atlas = ExtResource("1_juhg0")
+region = Rect2(576, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_626he"]
+atlas = ExtResource("1_juhg0")
+region = Rect2(768, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u0lp"]
+atlas = ExtResource("1_juhg0")
+region = Rect2(960, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2i62"]
+atlas = ExtResource("1_juhg0")
+region = Rect2(1152, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfskg"]
+atlas = ExtResource("1_juhg0")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gavrl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgtwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6uer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a43kq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_626he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u0lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2i62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfskg")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StartMenu" type="Node2D" unique_id=824032023]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=435687817]
+position = Vector2(579, 327.5)
+scale = Vector2(5.96875, 5.0546875)
+sprite_frames = SubResource("SpriteFrames_gavrl")
+speed_scale = 1.5
