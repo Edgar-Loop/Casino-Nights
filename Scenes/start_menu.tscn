@@ -1,41 +1,39 @@
 [gd_scene format=3 uid="uid://bgomaj1ten2an"]
 
+[ext_resource type="Script" uid="uid://vgpcjhph723i" path="res://Scenes/start_menu.gd" id="1_jgtwh"]
 [ext_resource type="Texture2D" uid="uid://beeg5ff71o8lx" path="res://Assets/LibreSprites/Intro CN spreadsheet.png" id="1_juhg0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgtwh"]
-atlas = ExtResource("1_juhg0")
-region = Rect2(192, 0, 192, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6uer"]
 atlas = ExtResource("1_juhg0")
-region = Rect2(384, 0, 192, 128)
+region = Rect2(192, 0, 192, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a43kq"]
 atlas = ExtResource("1_juhg0")
-region = Rect2(576, 0, 192, 128)
+region = Rect2(384, 0, 192, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_626he"]
 atlas = ExtResource("1_juhg0")
-region = Rect2(768, 0, 192, 128)
+region = Rect2(576, 0, 192, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8u0lp"]
 atlas = ExtResource("1_juhg0")
-region = Rect2(960, 0, 192, 128)
+region = Rect2(768, 0, 192, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2i62"]
 atlas = ExtResource("1_juhg0")
-region = Rect2(1152, 0, 192, 128)
+region = Rect2(960, 0, 192, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfskg"]
 atlas = ExtResource("1_juhg0")
+region = Rect2(1152, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru7em"]
+atlas = ExtResource("1_juhg0")
 region = Rect2(0, 0, 192, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gavrl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7wmg"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jgtwh")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m6uer")
 }, {
@@ -53,16 +51,51 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lfskg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru7em")
 }],
 "loop": 0,
-"name": &"default",
+"name": &"Intro",
 "speed": 5.0
 }]
 
 [node name="StartMenu" type="Node2D" unique_id=824032023]
+script = ExtResource("1_jgtwh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=435687817]
-position = Vector2(579, 327.5)
-scale = Vector2(5.96875, 5.0546875)
-sprite_frames = SubResource("SpriteFrames_gavrl")
-speed_scale = 1.5
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=199050603]
+position = Vector2(577, 326)
+scale = Vector2(6.0208335, 5.0625)
+sprite_frames = SubResource("SpriteFrames_r7wmg")
+animation = &"Intro"
+
+[node name="MenuButtons" type="CanvasLayer" parent="AnimatedSprite2D" unique_id=918104657]
+scale = Vector2(8, 8)
+transform = Transform2D(8, 0, 0, 8, 0, 0)
+
+[node name="Play" type="Button" parent="AnimatedSprite2D/MenuButtons" unique_id=1537151610]
+offset_left = 61.5
+offset_top = 32.375
+offset_right = 102.5
+offset_bottom = 63.375
+scale = Vector2(0.5, 0.5)
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="AnimatedSprite2D/MenuButtons" unique_id=80578170]
+offset_left = 54.375
+offset_top = 48.625
+offset_right = 124.375
+offset_bottom = 79.625
+scale = Vector2(0.5, 0.5)
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="AnimatedSprite2D/MenuButtons" unique_id=2042841519]
+offset_left = 62.0
+offset_top = 64.625
+offset_right = 104.0
+offset_bottom = 95.625
+scale = Vector2(0.5, 0.5)
+text = "Quit"
+metadata/_edit_use_anchors_ = true
