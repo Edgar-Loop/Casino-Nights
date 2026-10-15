@@ -91,13 +91,13 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaseArea" unique_id=301732879]
 position = Vector2(-9, -1)
+scale = Vector2(1.1, 1.1)
 shape = SubResource("CapsuleShape2D_haqyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=48055512]
 position = Vector2(14, 8)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_hm336")
-disabled = true
 
 [connection signal="body_entered" from="ScanArea" to="." method="_on_scan_area_body_entered"]
 [connection signal="body_exited" from="ScanArea" to="." method="_on_scan_area_body_exited"]
