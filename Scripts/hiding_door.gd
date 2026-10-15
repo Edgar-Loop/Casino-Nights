@@ -6,8 +6,6 @@ extends Node2D
 var hidden_player = null
 var busy: bool = false
 
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	if busy or not event.is_action_pressed("Interact"):
 		return

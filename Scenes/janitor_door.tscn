@@ -92,10 +92,8 @@ script = ExtResource("1_j1anm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1683864526]
 sprite_frames = SubResource("SpriteFrames_tf4ix")
-animation = &"door_closing"
+animation = &"door_opening"
 autoplay = "closed"
-frame = 3
-frame_progress = 1.0
 
 [node name="interact_area" type="Area2D" parent="." unique_id=981479854]
 
