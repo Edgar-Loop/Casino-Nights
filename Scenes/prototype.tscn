@@ -20,15 +20,21 @@ speed = 90
 zoom = Vector2(6, 6)
 
 [node name="SecurityBot" parent="." unique_id=1842787356 instance=ExtResource("3_uurmw")]
+z_index = 2
 position = Vector2(-395, 15)
+collision_layer = 7
 speed = 45.0
 
 [node name="SecurityBot2" parent="." unique_id=2091356389 instance=ExtResource("4_3mrnv")]
+z_index = 2
 position = Vector2(94, 35)
+collision_layer = 7
 speed = 55.0
 
 [node name="SecurityBot3" parent="." unique_id=1257577345 instance=ExtResource("5_uurmw")]
+z_index = 2
 position = Vector2(566, 11)
+collision_layer = 7
 
 [node name="janitor_door" parent="." unique_id=1431494753 instance=ExtResource("6_dig14")]
 position = Vector2(-217, -14)
