@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://vuts4vnxyy5a"]
+
+[ext_resource type="Texture2D" uid="uid://dho2jeg6x1bc7" path="res://Assets/LibreSprites/Hiding sprite sheet CN.png" id="1_a0t3e"]
+[ext_resource type="Script" uid="uid://45pau7v7blpl" path="res://Scripts/table_hiding.gd" id="1_nschi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvy1y"]
+atlas = ExtResource("1_a0t3e")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nschi"]
+atlas = ExtResource("1_a0t3e")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7wmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvy1y")
+}],
+"loop": 0,
+"name": &"Hidden",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nschi")
+}],
+"loop": 0,
+"name": &"Normal",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgc2h"]
+size = Vector2(32, 19)
+
+[node name="TableHiding" type="Node2D" unique_id=746984245]
+script = ExtResource("1_nschi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=778893144]
+sprite_frames = SubResource("SpriteFrames_r7wmg")
+animation = &"Normal"
+autoplay = "Normal"
+
+[node name="Interact_area" type="Area2D" parent="." unique_id=1153574634]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_area" unique_id=2026775293]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_rgc2h")

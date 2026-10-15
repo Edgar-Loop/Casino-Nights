@@ -7,10 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://depvr2m326b2x" path="res://Scenes/security_bot_hard.tscn" id="5_uurmw"]
 [ext_resource type="PackedScene" uid="uid://crwn6cavrvotv" path="res://Scenes/janitor_door.tscn" id="6_dig14"]
 [ext_resource type="PackedScene" uid="uid://dffx6nmn6iil8" path="res://Scenes/level_complete.tscn" id="7_7kyyp"]
+[ext_resource type="PackedScene" uid="uid://dbu56uhwmyhbh" path="res://Scenes/vent.tscn" id="8_k3dp0"]
+[ext_resource type="PackedScene" uid="uid://cyifkmin5y8cn" path="res://Scenes/machine_hiding.tscn" id="9_ma1ii"]
+[ext_resource type="PackedScene" uid="uid://vuts4vnxyy5a" path="res://Scenes/table_hiding.tscn" id="10_f3m8k"]
+[ext_resource type="PackedScene" uid="uid://ca7a2qeku4ikm" path="res://Scenes/table_2_hiding.tscn" id="11_fixtb"]
 
 [node name="Prototype" type="Node2D" unique_id=1481921450]
 
-[node name="Node2D" parent="." unique_id=515646349 instance=ExtResource("1_6koui")]
+[node name="Background" parent="." unique_id=515646349 instance=ExtResource("1_6koui")]
 
 [node name="Player" parent="." unique_id=1872723064 instance=ExtResource("2_3mrnv")]
 position = Vector2(-483, 2)
@@ -19,34 +23,12 @@ speed = 90
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2101570863]
 zoom = Vector2(6, 6)
 
-[node name="SecurityBot" parent="." unique_id=1842787356 instance=ExtResource("3_uurmw")]
-z_index = 2
-position = Vector2(-127, 17)
-disable_mode = 2
-speed = 45.0
-
-[node name="SecurityBot2" parent="." unique_id=2091356389 instance=ExtResource("4_3mrnv")]
-z_index = 2
-position = Vector2(282, 20)
-disable_mode = 1
-collision_layer = 3
-speed = 55.0
-
-[node name="SecurityBot3" parent="." unique_id=1257577345 instance=ExtResource("5_uurmw")]
-z_index = 2
-position = Vector2(713, 16)
-disable_mode = 1
-collision_layer = 3
-
-[node name="janitor_door" parent="." unique_id=1431494753 instance=ExtResource("6_dig14")]
-position = Vector2(-217, -14)
-
 [node name="LevelComplete" parent="." unique_id=685382877 instance=ExtResource("7_7kyyp")]
 position = Vector2(1964, 23)
 
-[node name="Node" type="Node" parent="." unique_id=1188948132]
+[node name="LabelManager" type="Node" parent="." unique_id=1188948132]
 
-[node name="Label" type="Label" parent="Node" unique_id=198216491]
+[node name="Label" type="Label" parent="LabelManager" unique_id=198216491]
 offset_left = -493.0
 offset_top = -46.0
 offset_right = -106.0
@@ -55,7 +37,7 @@ scale = Vector2(0.3, 0.3)
 text = "You can use wasd and 
 arrow keys to move around"
 
-[node name="Label2" type="Label" parent="Node" unique_id=909221747]
+[node name="Label2" type="Label" parent="LabelManager" unique_id=909221747]
 offset_left = -306.0
 offset_top = -48.0
 offset_right = 81.0
@@ -64,7 +46,7 @@ scale = Vector2(0.3, 0.3)
 text = "You can use E to interact to hide in doors 
 or between machines and under tables"
 
-[node name="Label3" type="Label" parent="Node" unique_id=257352134]
+[node name="Label3" type="Label" parent="LabelManager" unique_id=257352134]
 offset_left = -153.0
 offset_top = 54.0
 offset_right = 234.0
@@ -72,7 +54,7 @@ offset_bottom = 103.0
 scale = Vector2(0.3, 0.3)
 text = "Beware the robots they will tase you!!!"
 
-[node name="Label4" type="Label" parent="Node" unique_id=1948894738]
+[node name="Label4" type="Label" parent="LabelManager" unique_id=1948894738]
 offset_left = 328.0
 offset_top = -47.0
 offset_right = 715.0
@@ -81,7 +63,7 @@ scale = Vector2(0.3, 0.3)
 text = "The higher the levels you go the faster 
 and more difficult it will be to evade them"
 
-[node name="Label4" type="Label" parent="." unique_id=1125810205]
+[node name="Label5" type="Label" parent="LabelManager" unique_id=1125810205]
 offset_left = 524.0
 offset_top = 4.0
 offset_right = 911.0
@@ -89,3 +71,118 @@ offset_bottom = 53.0
 scale = Vector2(0.3, 0.3)
 text = "You can collect chips from the tables and 
 sometimes machines so you get a higher score"
+
+[node name="Label6" type="Label" parent="LabelManager" unique_id=1078235922]
+offset_left = -394.00003
+offset_top = 16.0
+offset_right = 141.99997
+offset_bottom = 65.0
+scale = Vector2(0.3, 0.3)
+text = "If there are 3 machines you wont be able to hide between 
+them,  there is too much wiring behind all 3 of them"
+
+[node name="BotManager" type="Node" parent="." unique_id=1409331972]
+
+[node name="SecurityBot" parent="BotManager" unique_id=1842787356 instance=ExtResource("3_uurmw")]
+z_index = 2
+position = Vector2(-127, 17)
+disable_mode = 2
+speed = 45.0
+
+[node name="SecurityBot2" parent="BotManager" unique_id=2091356389 instance=ExtResource("4_3mrnv")]
+z_index = 2
+position = Vector2(282, 20)
+disable_mode = 1
+collision_layer = 3
+speed = 55.0
+
+[node name="SecurityBot3" parent="BotManager" unique_id=1257577345 instance=ExtResource("5_uurmw")]
+z_index = 2
+position = Vector2(713, 16)
+disable_mode = 1
+collision_layer = 3
+
+[node name="AnimatedAssets" type="Node" parent="." unique_id=1615048649]
+
+[node name="Vent" parent="AnimatedAssets" unique_id=1697855354 instance=ExtResource("8_k3dp0")]
+position = Vector2(1025, -22)
+
+[node name="Vent2" parent="AnimatedAssets" unique_id=171770694 instance=ExtResource("8_k3dp0")]
+position = Vector2(1601, -22)
+
+[node name="Vent3" parent="AnimatedAssets" unique_id=696270858 instance=ExtResource("8_k3dp0")]
+position = Vector2(353, -22)
+
+[node name="Vent4" parent="AnimatedAssets" unique_id=995408658 instance=ExtResource("8_k3dp0")]
+position = Vector2(-63, -22)
+
+[node name="Vent5" parent="AnimatedAssets" unique_id=2037332763 instance=ExtResource("8_k3dp0")]
+position = Vector2(-351, -22)
+
+[node name="InteractableAssets" type="Node" parent="." unique_id=36719594]
+
+[node name="MachineHiding" parent="InteractableAssets" unique_id=1653352921 instance=ExtResource("9_ma1ii")]
+position = Vector2(-288, -16)
+
+[node name="janitor_door" parent="InteractableAssets" unique_id=1431494753 instance=ExtResource("6_dig14")]
+position = Vector2(-217, -14)
+
+[node name="MachineHiding4" parent="InteractableAssets" unique_id=183885285 instance=ExtResource("9_ma1ii")]
+position = Vector2(0, -16)
+
+[node name="MachineHiding5" parent="InteractableAssets" unique_id=1558561729 instance=ExtResource("9_ma1ii")]
+position = Vector2(64, -16)
+
+[node name="MachineHiding6" parent="InteractableAssets" unique_id=467099786 instance=ExtResource("9_ma1ii")]
+position = Vector2(160, -16)
+
+[node name="MachineHiding7" parent="InteractableAssets" unique_id=1939297996 instance=ExtResource("9_ma1ii")]
+position = Vector2(128, 48)
+
+[node name="MachineHiding8" parent="InteractableAssets" unique_id=620650594 instance=ExtResource("9_ma1ii")]
+position = Vector2(192, 48)
+
+[node name="MachineHiding9" parent="InteractableAssets" unique_id=372334916 instance=ExtResource("9_ma1ii")]
+position = Vector2(320, 48)
+
+[node name="MachineHiding10" parent="InteractableAssets" unique_id=1721975930 instance=ExtResource("9_ma1ii")]
+position = Vector2(416, 48)
+
+[node name="MachineHiding11" parent="InteractableAssets" unique_id=208138540 instance=ExtResource("9_ma1ii")]
+position = Vector2(640, -16)
+
+[node name="MachineHiding12" parent="InteractableAssets" unique_id=151051777 instance=ExtResource("9_ma1ii")]
+position = Vector2(736, 48)
+
+[node name="MachineHiding13" parent="InteractableAssets" unique_id=1947252140 instance=ExtResource("9_ma1ii")]
+position = Vector2(736, -16)
+
+[node name="MachineHiding14" parent="InteractableAssets" unique_id=1269008513 instance=ExtResource("9_ma1ii")]
+position = Vector2(832, 48)
+
+[node name="MachineHiding15" parent="InteractableAssets" unique_id=2013733178 instance=ExtResource("9_ma1ii")]
+position = Vector2(960, 48)
+
+[node name="MachineHiding16" parent="InteractableAssets" unique_id=1253730278 instance=ExtResource("9_ma1ii")]
+position = Vector2(1312, -16)
+
+[node name="MachineHiding17" parent="InteractableAssets" unique_id=1558371081 instance=ExtResource("9_ma1ii")]
+position = Vector2(1408, -16)
+
+[node name="MachineHiding18" parent="InteractableAssets" unique_id=915164513 instance=ExtResource("9_ma1ii")]
+position = Vector2(1728, -16)
+
+[node name="TableHiding" parent="InteractableAssets" unique_id=746984245 instance=ExtResource("10_f3m8k")]
+position = Vector2(-240, 48)
+
+[node name="TableHiding2" parent="InteractableAssets" unique_id=1467246946 instance=ExtResource("10_f3m8k")]
+position = Vector2(1808, -9)
+
+[node name="Table2Hiding" parent="InteractableAssets" unique_id=521045263 instance=ExtResource("11_fixtb")]
+position = Vector2(-112, -10)
+
+[node name="Table2Hiding2" parent="InteractableAssets" unique_id=829162075 instance=ExtResource("11_fixtb")]
+position = Vector2(560, -10)
+
+[node name="Table2Hiding3" parent="InteractableAssets" unique_id=675495048 instance=ExtResource("11_fixtb")]
+position = Vector2(1232, -11)
