@@ -75,8 +75,8 @@ script = ExtResource("1_hxgdy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=301732879]
 position = Vector2(-9, -1)
+scale = Vector2(1.1, 1.1)
 shape = SubResource("CapsuleShape2D_haqyu")
-disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1110583208]
 position = Vector2(10, 0)

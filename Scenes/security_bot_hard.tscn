@@ -77,7 +77,6 @@ speed = 80.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=301732879]
 position = Vector2(-9, -1)
 shape = SubResource("CapsuleShape2D_haqyu")
-disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1110583208]
 position = Vector2(10, 0)
@@ -100,6 +99,7 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaseArea" unique_id=130362173]
 position = Vector2(-9, -1)
+scale = Vector2(1.1, 1.1)
 shape = SubResource("CapsuleShape2D_qo1tm")
 
 [connection signal="body_entered" from="ScanArea" to="." method="_on_scan_area_body_entered"]

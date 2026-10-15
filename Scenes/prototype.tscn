@@ -21,23 +21,71 @@ zoom = Vector2(6, 6)
 
 [node name="SecurityBot" parent="." unique_id=1842787356 instance=ExtResource("3_uurmw")]
 z_index = 2
-position = Vector2(-395, 15)
-collision_layer = 7
+position = Vector2(-127, 17)
+disable_mode = 2
 speed = 45.0
 
 [node name="SecurityBot2" parent="." unique_id=2091356389 instance=ExtResource("4_3mrnv")]
 z_index = 2
-position = Vector2(94, 35)
-collision_layer = 7
+position = Vector2(282, 20)
+disable_mode = 1
+collision_layer = 3
 speed = 55.0
 
 [node name="SecurityBot3" parent="." unique_id=1257577345 instance=ExtResource("5_uurmw")]
 z_index = 2
-position = Vector2(566, 11)
-collision_layer = 7
+position = Vector2(713, 16)
+disable_mode = 1
+collision_layer = 3
 
 [node name="janitor_door" parent="." unique_id=1431494753 instance=ExtResource("6_dig14")]
 position = Vector2(-217, -14)
 
 [node name="LevelComplete" parent="." unique_id=685382877 instance=ExtResource("7_7kyyp")]
-position = Vector2(-472, 50)
+position = Vector2(1964, 23)
+
+[node name="Node" type="Node" parent="." unique_id=1188948132]
+
+[node name="Label" type="Label" parent="Node" unique_id=198216491]
+offset_left = -493.0
+offset_top = -46.0
+offset_right = -106.0
+offset_bottom = 3.0
+scale = Vector2(0.3, 0.3)
+text = "You can use wasd and 
+arrow keys to move around"
+
+[node name="Label2" type="Label" parent="Node" unique_id=909221747]
+offset_left = -306.0
+offset_top = -48.0
+offset_right = 81.0
+offset_bottom = 1.0
+scale = Vector2(0.3, 0.3)
+text = "You can use E to interact to hide in doors 
+or between machines and under tables"
+
+[node name="Label3" type="Label" parent="Node" unique_id=257352134]
+offset_left = -153.0
+offset_top = 54.0
+offset_right = 234.0
+offset_bottom = 103.0
+scale = Vector2(0.3, 0.3)
+text = "Beware the robots they will tase you!!!"
+
+[node name="Label4" type="Label" parent="Node" unique_id=1948894738]
+offset_left = 328.0
+offset_top = -47.0
+offset_right = 715.0
+offset_bottom = 2.0
+scale = Vector2(0.3, 0.3)
+text = "The higher the levels you go the faster 
+and more difficult it will be to evade them"
+
+[node name="Label4" type="Label" parent="." unique_id=1125810205]
+offset_left = 524.0
+offset_top = 4.0
+offset_right = 911.0
+offset_bottom = 53.0
+scale = Vector2(0.3, 0.3)
+text = "You can collect chips from the tables and 
+sometimes machines so you get a higher score"
