@@ -1,3 +1,49 @@
 [gd_scene format=3 uid="uid://dbu56uhwmyhbh"]
 
+[ext_resource type="Script" uid="uid://c842rvcv3akcn" path="res://Scripts/vent.gd" id="1_e0cf5"]
+[ext_resource type="Texture2D" uid="uid://6p6381esvnr1" path="res://Assets/LibreSprites/Vent CN.png" id="1_xistq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0cf5"]
+atlas = ExtResource("1_xistq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ticwc"]
+atlas = ExtResource("1_xistq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ak8b"]
+atlas = ExtResource("1_xistq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arggx"]
+atlas = ExtResource("1_xistq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7wmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0cf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ticwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ak8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arggx")
+}],
+"loop": 1,
+"name": &"Blowing",
+"speed": 5.0
+}]
+
 [node name="Vent" type="Node2D" unique_id=1697855354]
+script = ExtResource("1_e0cf5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1200620558]
+position = Vector2(15, 6)
+sprite_frames = SubResource("SpriteFrames_r7wmg")
+animation = &"Blowing"
+frame_progress = 0.13637196

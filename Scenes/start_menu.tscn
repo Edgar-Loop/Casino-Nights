@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgomaj1ten2an"]
 
-[ext_resource type="Script" uid="uid://vgpcjhph723i" path="res://Scenes/start_menu.gd" id="1_jgtwh"]
+[ext_resource type="Script" uid="uid://vgpcjhph723i" path="res://Scripts/start_menu.gd" id="1_jgtwh"]
 [ext_resource type="Texture2D" uid="uid://beeg5ff71o8lx" path="res://Assets/LibreSprites/Intro CN spreadsheet.png" id="1_juhg0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6uer"]
