@@ -62,9 +62,11 @@ animations = [{
 radius = 6.0
 height = 23.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_haqyu"]
-radius = 8.75
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnjhx"]
+size = Vector2(14.545454, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fixtb"]
+size = Vector2(8, 14)
 
 [node name="SecurityBot" type="CharacterBody2D" unique_id=1842787356]
 script = ExtResource("1_hm336")
@@ -92,12 +94,11 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaseArea" unique_id=301732879]
 position = Vector2(-9, -1)
 scale = Vector2(1.1, 1.1)
-shape = SubResource("CapsuleShape2D_haqyu")
+shape = SubResource("RectangleShape2D_xnjhx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=48055512]
-position = Vector2(14, 8)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_hm336")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175540672]
+position = Vector2(-9, -1)
+shape = SubResource("RectangleShape2D_fixtb")
 
 [connection signal="body_entered" from="ScanArea" to="." method="_on_scan_area_body_entered"]
 [connection signal="body_exited" from="ScanArea" to="." method="_on_scan_area_body_exited"]
