@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://cgslvkicq2u1p" path="res://Scripts/security_bot_hard.gd" id="1_qo1tm"]
 [ext_resource type="Texture2D" uid="uid://dt7rjlg08cf31" path="res://Assets/LibreSprites/SecurityBot Floor CN.png" id="2_f3bpo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_haqyu"]
-radius = 8.75
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo1tm"]
+size = Vector2(8, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hm336"]
 atlas = ExtResource("2_f3bpo")
@@ -66,17 +65,16 @@ animations = [{
 radius = 6.0
 height = 23.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qo1tm"]
-radius = 8.75
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3bpo"]
+size = Vector2(14.545454, 20)
 
 [node name="SecurityBot" type="CharacterBody2D" unique_id=1842787356]
 script = ExtResource("1_qo1tm")
 speed = 80.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=301732879]
-position = Vector2(-9, -1)
-shape = SubResource("CapsuleShape2D_haqyu")
+position = Vector2(-9, -1.5)
+shape = SubResource("RectangleShape2D_qo1tm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1110583208]
 position = Vector2(10, 0)
@@ -100,7 +98,7 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaseArea" unique_id=130362173]
 position = Vector2(-9, -1)
 scale = Vector2(1.1, 1.1)
-shape = SubResource("CapsuleShape2D_qo1tm")
+shape = SubResource("RectangleShape2D_f3bpo")
 
 [connection signal="body_entered" from="ScanArea" to="." method="_on_scan_area_body_entered"]
 [connection signal="body_exited" from="ScanArea" to="." method="_on_scan_area_body_exited"]
