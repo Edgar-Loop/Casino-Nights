@@ -42,7 +42,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite_2d.play("idle")
 		move_and_slide()
-		
+	
+	if Input.is_action_just_pressed("Mask"):
+		animated_sprite_2d.play("walkMask")
 func enter_hiding() -> void:
 	is_hiding = true
 	dash_time_left = 0
