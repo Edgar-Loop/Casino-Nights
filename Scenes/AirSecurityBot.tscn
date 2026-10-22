@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bgy1rymqfn5jf"]
+
+[ext_resource type="Texture2D" uid="uid://ces0x4dr80no1" path="res://Assets/LibreSprites/AIrSecurityBot Sheet CN.png" id="1_eb3yj"]
+[ext_resource type="Script" uid="uid://dyh1tql5nif6v" path="res://Scripts/air_security_bot.gd" id="1_o81d3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o81d3"]
+atlas = ExtResource("1_eb3yj")
+region = Rect2(0, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd4xy"]
+atlas = ExtResource("1_eb3yj")
+region = Rect2(32, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g3ux"]
+atlas = ExtResource("1_eb3yj")
+region = Rect2(64, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paghj"]
+atlas = ExtResource("1_eb3yj")
+region = Rect2(96, 0, 32, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7wmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o81d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd4xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g3ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paghj")
+}],
+"loop": 1,
+"name": &"Flying",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_it5su"]
+radius = 16.0
+height = 72.0
+
+[node name="AirSecurityBot" type="CharacterBody2D" unique_id=1155908972]
+script = ExtResource("1_o81d3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2117725959]
+sprite_frames = SubResource("SpriteFrames_r7wmg")
+animation = &"Flying"
+frame_progress = 0.30633596
+
+[node name="ScanArea" type="Area2D" parent="." unique_id=1750292252]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScanArea" unique_id=2088997193]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_it5su")
