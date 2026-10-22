@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal hiding_changed(is_hiding: bool)
 
 @export var speed := 80
 @export var dash_speed: float = 180
@@ -8,6 +9,8 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+var has_mask: bool = false
+var is_mask: bool = false
 var is_hiding: bool = false
 var dash_time_left: float = 0
 var cooldown_time_left: float = 0
@@ -34,25 +37,38 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = direction * speed
 	
-	if velocity != Vector2.ZERO:
-		animated_sprite_2d.play("walk")
-		
-		if velocity.x != 0.0:
-			animated_sprite_2d.flip_h = velocity.x < 0.0
+	if is_mask:
+		if velocity != Vector2.ZERO:
+			animated_sprite_2d.play("walkMask")
+		else:
+			animated_sprite_2d.play("idleMask")
+	else:
+		if velocity != Vector2.ZERO:
+			animated_sprite_2d.play("walk")
 		else:
 			animated_sprite_2d.play("idle")
-		move_and_slide()
-	
+	if velocity.x != 0.0:
+		animated_sprite_2d.flip_h = velocity.x < 0.0
+	move_and_slide()
+			
 	if Input.is_action_just_pressed("Mask"):
-		animated_sprite_2d.play("walkMask")
+		is_mask = !is_mask
+
 func enter_hiding() -> void:
 	is_hiding = true
 	dash_time_left = 0
 	velocity = Vector2.ZERO
 	animated_sprite_2d.hide()
-
+	set_hiding(true)
+	
 func exit_hiding() -> void:
 	is_hiding = false
 	animated_sprite_2d.show()
 	animated_sprite_2d.play("idle")
-		
+	set_hiding(false)
+
+func set_hiding(value: bool):
+	if is_hiding == value:
+		return
+	is_hiding = value
+	hiding_changed.emit(is_hiding)
