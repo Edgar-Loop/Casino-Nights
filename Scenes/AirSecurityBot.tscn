@@ -43,6 +43,9 @@ animations = [{
 radius = 16.0
 height = 72.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gavrl"]
+size = Vector2(25, 12)
+
 [node name="AirSecurityBot" type="CharacterBody2D" unique_id=1155908972]
 script = ExtResource("1_o81d3")
 
@@ -56,3 +59,7 @@ frame_progress = 0.30633596
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScanArea" unique_id=2088997193]
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_it5su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687577994]
+position = Vector2(-0.5, -50)
+shape = SubResource("RectangleShape2D_gavrl")
