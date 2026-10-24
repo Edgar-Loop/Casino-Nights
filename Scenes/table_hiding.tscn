@@ -46,3 +46,7 @@ autoplay = "Normal"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_area" unique_id=2026775293]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_rgc2h")
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=186243229]
+
+[node name="HidePoint" type="Marker2D" parent="." unique_id=1691422237]

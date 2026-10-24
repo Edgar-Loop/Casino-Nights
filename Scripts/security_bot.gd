@@ -9,6 +9,9 @@ extends CharacterBody2D
 @onready var body_collision: CollisionShape2D = $CollisionShape2D
 @onready var tase_area: Area2D = $TaseArea
 
+var investigating: bool = false
+var investigation_target: Vector2 = Vector2.ZERO
+
 var chase_target: Node2D = null
 var tracked_player: Node2D = null
 var body_right_x: float
@@ -26,6 +29,35 @@ func _ready() -> void:
 	tase_area.body_entered.connect(_on_body_entered)
 
 func _physics_process(delta: float) -> void:
+	
+	if investigating:
+		var distance_to_target = global_position.distance_to(investigation_target)
+
+		if distance_to_target < 10.0:
+			investigating = false
+			velocity = Vector2.ZERO
+			move_and_slide()
+			return
+
+		var direction_to_target = global_position.direction_to(investigation_target)
+		velocity = direction_to_target * speed
+		if velocity.x < 0 and moving_right:
+			moving_right = false
+			animated_sprite.play("move_left")
+			animated_sprite.position.x = -30
+			scan_area.position.x = scan_right_x - 48
+			body_collision.position.x = body_right_x - 12
+
+		elif velocity.x > 0 and not moving_right:
+			moving_right = true
+			animated_sprite.play("move_right")
+			animated_sprite.position.x = 10
+			scan_area.position.x = scan_right_x
+			body_collision.position.x = body_right_x - 8
+
+		move_and_slide()
+		return
+	
 	if is_instance_valid(chase_target):
 		if chase_target.is_hiding:
 			chase_target = null
@@ -130,3 +162,12 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	get_tree().change_scene_to_file("res://Scenes/caughimage.tscn")
+
+func investigate(target_position: Vector2) -> void:
+	investigation_target = target_position
+	investigating = true
+
+	chase_target = null
+	lose_target_timer.stop()
+
+	print("Robot 1 moving")

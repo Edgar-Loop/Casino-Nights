@@ -69,6 +69,7 @@ size = Vector2(14.545454, 20)
 size = Vector2(8, 14)
 
 [node name="SecurityBot" type="CharacterBody2D" unique_id=1842787356]
+collision_layer = 4
 script = ExtResource("1_hm336")
 speed = 50.0
 

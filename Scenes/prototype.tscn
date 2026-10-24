@@ -89,16 +89,31 @@ scale = Vector2(0.3, 0.3)
 text = "If there are 3 machines you wont be able to hide between 
 them,  there is too much wiring behind all 3 of them"
 
+[node name="Label7" type="Label" parent="LabelManager" unique_id=1514410076]
+offset_left = -75.0
+offset_top = -46.0
+offset_right = 461.0
+offset_bottom = 3.0
+scale = Vector2(0.3, 0.3)
+text = "Be very careful about the air drone, it will call every single
+ robot there is available to the area that it saw you!!"
+
 [node name="BotManager" type="Node" parent="." unique_id=1409331972]
 
-[node name="SecurityBot4" parent="BotManager" unique_id=1842787356 instance=ExtResource("3_uurmw")]
+[node name="SecurityBot4" parent="BotManager" unique_id=1842787356 groups=["Robots"] instance=ExtResource("3_uurmw")]
+z_index = 2
 position = Vector2(-127, 17)
 
-[node name="SecurityBot" parent="BotManager" unique_id=1199847749 instance=ExtResource("4_3mrnv")]
+[node name="SecurityBot" parent="BotManager" unique_id=1199847749 groups=["Robots"] instance=ExtResource("4_3mrnv")]
+z_index = 2
 position = Vector2(282, 20)
 
-[node name="SecurityBot2" parent="BotManager" unique_id=1482475924 instance=ExtResource("5_uurmw")]
+[node name="SecurityBot2" parent="BotManager" unique_id=1482475924 groups=["Robots"] instance=ExtResource("5_uurmw")]
+z_index = 2
 position = Vector2(711, 16)
+
+[node name="AirSecurityBot" parent="BotManager" unique_id=1155908972 instance=ExtResource("3_xnjhx")]
+position = Vector2(82, 11)
 
 [node name="AnimatedAssets" type="Node" parent="." unique_id=1615048649]
 
@@ -184,6 +199,3 @@ position = Vector2(560, -10)
 
 [node name="Table2Hiding3" parent="InteractableAssets" unique_id=675495048 instance=ExtResource("11_fixtb")]
 position = Vector2(1232, -11)
-
-[node name="AirSecurityBot" parent="." unique_id=1155908972 instance=ExtResource("3_xnjhx")]
-position = Vector2(-395, 11)
