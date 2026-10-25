@@ -45,20 +45,40 @@ func _physics_process(delta: float) -> void:
 		if velocity.x < 0 and moving_right:
 			moving_right = false
 			animated_sprite.play("move_left")
-			animated_sprite.position.x = -30
+			animated_sprite.position.x = -28
 			scan_area.position.x = scan_right_x - 48
-			body_collision.position.x = body_right_x - 12
-
+			
 		elif velocity.x > 0 and not moving_right:
 			moving_right = true
 			animated_sprite.play("move_right")
 			animated_sprite.position.x = 10
 			scan_area.position.x = scan_right_x
-			body_collision.position.x = body_right_x - 8
-
 		move_and_slide()
 		return
 
+	if is_instance_valid(chase_target):
+		if chase_target.is_hiding:
+			chase_target = null
+			velocity = Vector2.ZERO
+		else:
+			velocity = global_position.direction_to(
+				chase_target.global_position
+			) * speed
+
+			if velocity.x < 0 and moving_right:
+				moving_right = false
+				animated_sprite.play("move_left")
+				animated_sprite.position.x = -28
+				scan_area.position.x = scan_right_x - 48
+
+			elif velocity.x > 0 and not moving_right:
+				moving_right = true
+				animated_sprite.play("move_right")
+				animated_sprite.position.x = 10
+				scan_area.position.x = scan_right_x
+			move_and_slide()
+			return
+			
 	vertical_timer += delta
 
 	if vertical_timer >= 0.75:
@@ -85,12 +105,10 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("move_right")
 			animated_sprite.position.x = 10
 			scan_area.position.x = scan_right_x
-			body_collision.position.x = body_right_x - 8
 		else:
 			animated_sprite.play("move_left")
-			animated_sprite.position.x = -30
+			animated_sprite.position.x = -28
 			scan_area.position.x = scan_right_x - 48
-			body_collision.position.x = body_right_x - 12
 
 		return
 
@@ -111,6 +129,10 @@ func _on_scan_area_body_entered(body: Node2D) -> void:
 
 	if body.is_hiding:
 		return
+
+	chase_target = body
+	lose_target_timer.stop()
+	print("Player Entered Scan Area 3")
 
 func _on_scan_area_body_exited(body: Node2D) -> void:
 	if body == chase_target:
