@@ -18,7 +18,7 @@
 [node name="Background" parent="." unique_id=515646349 instance=ExtResource("1_6koui")]
 
 [node name="Player" parent="." unique_id=1872723064 instance=ExtResource("2_3mrnv")]
-position = Vector2(-477, 9)
+position = Vector2(-473, 20)
 speed = 90
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2101570863]
@@ -32,7 +32,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="LevelComplete" parent="." unique_id=685382877 instance=ExtResource("7_7kyyp")]
-position = Vector2(1964, 23)
+position = Vector2(1972, -25)
 
 [node name="LabelManager" type="Node" parent="." unique_id=1188948132]
 
@@ -100,9 +100,8 @@ text = "Be very careful about the air drone, it will call every single
 
 [node name="BotManager" type="Node" parent="." unique_id=1409331972]
 
-[node name="SecurityBot4" parent="BotManager" unique_id=1842787356 groups=["Robots"] instance=ExtResource("3_uurmw")]
-z_index = 2
-position = Vector2(-127, 17)
+[node name="SecurityBot3" parent="BotManager" unique_id=1842787356 groups=["Robots"] instance=ExtResource("3_uurmw")]
+position = Vector2(-105, 19)
 
 [node name="SecurityBot" parent="BotManager" unique_id=1199847749 groups=["Robots"] instance=ExtResource("4_3mrnv")]
 z_index = 2

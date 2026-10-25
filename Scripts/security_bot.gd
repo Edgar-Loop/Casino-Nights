@@ -70,17 +70,14 @@ func _physics_process(delta: float) -> void:
 			if velocity.x < 0 and moving_right:
 				moving_right = false
 				animated_sprite.play("move_left")
-				animated_sprite.position.x = -30
+				animated_sprite.position.x = -28
 				scan_area.position.x = scan_right_x - 48
-				body_collision.position.x = scan_right_x - 12
 
 			elif velocity.x > 0 and not moving_right:
 				moving_right = true
 				animated_sprite.play("move_right")
 				animated_sprite.position.x = 10
 				scan_area.position.x = scan_right_x
-				body_collision.position.x = body_right_x - 8
-
 			move_and_slide()
 			return
 
@@ -103,13 +100,10 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("move_right")
 			animated_sprite.position.x = 10
 			scan_area.position.x = scan_right_x
-			body_collision.position.x = body_right_x - 8
 		else:
 			animated_sprite.play("move_left")
-			animated_sprite.position.x = -30
+			animated_sprite.position.x = -28
 			scan_area.position.x = scan_right_x - 48
-			body_collision.position.x = body_right_x - 12
-
 		return
 
 	velocity = Vector2(
@@ -132,7 +126,7 @@ func _on_scan_area_body_entered(body: Node2D) -> void:
 
 	chase_target = body
 	lose_target_timer.stop()
-	print("Player Entered Scan Area")
+	print("Player Entered Scan Area 1")
 
 func _on_scan_area_body_exited(body: Node2D) -> void:
 	if body == chase_target:
@@ -171,3 +165,16 @@ func investigate(target_position: Vector2) -> void:
 	lose_target_timer.stop()
 
 	print("Robot 1 moving")
+
+func update_facing() -> void:
+	if velocity.x < -0.1 and moving_right:
+		moving_right = false
+		animated_sprite.play("move_left")
+		animated_sprite.position.x = -28
+		scan_area.position.x = scan_right_x - 48
+
+	elif velocity.x > 0.1 and not moving_right:
+		moving_right = true
+		animated_sprite.play("move_right")
+		animated_sprite.position.x = 10
+		scan_area.position.x = scan_right_x
