@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://rsxek7sgoobo"]
+
+[ext_resource type="Texture2D" uid="uid://dq4is431ymhmj" path="res://Assets/LibreSprites/chip sheet.png" id="1_51edu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h2ia"]
+atlas = ExtResource("1_51edu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb6br"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h2ia")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6br"]
+size = Vector2(2, 1)
+
+[node name="blue coin" type="Area2D" unique_id=887439532]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327319306]
+sprite_frames = SubResource("SpriteFrames_vb6br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1613253531]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vb6br")
