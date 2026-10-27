@@ -69,6 +69,7 @@ height = 23.0
 size = Vector2(14.545454, 20)
 
 [node name="SecurityBot" type="CharacterBody2D" unique_id=1842787356]
+collision_layer = 4
 script = ExtResource("1_hxgdy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=301732879]

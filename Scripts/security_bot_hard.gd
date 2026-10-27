@@ -9,9 +9,11 @@ extends CharacterBody2D
 @onready var body_collision: CollisionShape2D = $CollisionShape2D
 @onready var tase_area: Area2D = $TaseArea
 
+var investigating: bool = false
+var investigation_target: Vector2 = Vector2.ZERO
+
 var chase_target: Node2D = null
 var tracked_player: Node2D = null
-
 var body_right_x: float
 var start_x: float
 var moving_right: bool = true
@@ -29,32 +31,54 @@ func _ready() -> void:
 	tase_area.body_entered.connect(_on_body_entered)
 
 func _physics_process(delta: float) -> void:
-	if is_instance_valid(chase_target) and chase_target.is_hiding:
-		chase_target = null
-		lose_target_timer.stop()
+	if investigating:
+		var distance_to_target = global_position.distance_to(investigation_target)
 
-	if is_instance_valid(chase_target):
-		velocity = global_position.direction_to(
-			chase_target.global_position
-		) * speed
+		if distance_to_target < 10.0:
+			investigating = false
+			velocity = Vector2.ZERO
+			move_and_slide()
+			return
 
+		var direction_to_target = global_position.direction_to(investigation_target)
+		velocity = direction_to_target * speed
 		if velocity.x < 0 and moving_right:
 			moving_right = false
 			animated_sprite.play("move_left")
-			animated_sprite.position.x = -30
+			animated_sprite.position.x = -28
 			scan_area.position.x = scan_right_x - 48
-			body_collision.position.x = scan_right_x - 12
-
+			
 		elif velocity.x > 0 and not moving_right:
 			moving_right = true
 			animated_sprite.play("move_right")
 			animated_sprite.position.x = 10
 			scan_area.position.x = scan_right_x
-			body_collision.position.x = body_right_x - 8
-
 		move_and_slide()
 		return
 
+	if is_instance_valid(chase_target):
+		if chase_target.is_hiding:
+			chase_target = null
+			velocity = Vector2.ZERO
+		else:
+			velocity = global_position.direction_to(
+				chase_target.global_position
+			) * speed
+
+			if velocity.x < 0 and moving_right:
+				moving_right = false
+				animated_sprite.play("move_left")
+				animated_sprite.position.x = -28
+				scan_area.position.x = scan_right_x - 48
+
+			elif velocity.x > 0 and not moving_right:
+				moving_right = true
+				animated_sprite.play("move_right")
+				animated_sprite.position.x = 10
+				scan_area.position.x = scan_right_x
+			move_and_slide()
+			return
+			
 	vertical_timer += delta
 
 	if vertical_timer >= 0.75:
@@ -81,12 +105,10 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("move_right")
 			animated_sprite.position.x = 10
 			scan_area.position.x = scan_right_x
-			body_collision.position.x = body_right_x - 8
 		else:
 			animated_sprite.play("move_left")
-			animated_sprite.position.x = -30
+			animated_sprite.position.x = -28
 			scan_area.position.x = scan_right_x - 48
-			body_collision.position.x = body_right_x - 12
 
 		return
 
@@ -110,7 +132,7 @@ func _on_scan_area_body_entered(body: Node2D) -> void:
 
 	chase_target = body
 	lose_target_timer.stop()
-	print("Player Entered Scan Area")
+	print("Player Entered Scan Area 3")
 
 func _on_scan_area_body_exited(body: Node2D) -> void:
 	if body == chase_target:
@@ -125,6 +147,8 @@ func _on_player_hiding_changed(is_hiding: bool) -> void:
 		lose_target_timer.stop()
 		print("Player is hiding!")
 	else:
+		print("Player is no longer hiding!")
+
 		if is_instance_valid(tracked_player):
 			if scan_area.overlaps_body(tracked_player):
 				chase_target = tracked_player
@@ -138,3 +162,12 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	get_tree().change_scene_to_file("res://Scenes/caughimage.tscn")
+
+func investigate(target_position: Vector2) -> void:
+	investigation_target = target_position
+	investigating = true
+
+	chase_target = null
+	lose_target_timer.stop()
+
+	print("Robot 3 moving")

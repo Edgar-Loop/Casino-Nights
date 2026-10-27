@@ -9,6 +9,7 @@ signal hiding_changed(is_hiding: bool)
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+var normal_collision_layer: int
 var has_mask: bool = false
 var is_mask: bool = false
 var is_hiding: bool = false
@@ -16,6 +17,9 @@ var dash_time_left: float = 0
 var cooldown_time_left: float = 0
 var dash_direction: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	normal_collision_layer = collision_layer
+	
 func _physics_process(delta: float) -> void:
 	dash_time_left = maxf(dash_time_left - delta, 0.0)
 	cooldown_time_left = maxf(cooldown_time_left - delta, 0.0)
@@ -60,13 +64,15 @@ func enter_hiding() -> void:
 	velocity = Vector2.ZERO
 	animated_sprite_2d.hide()
 	set_hiding(true)
+	collision_layer = 0
 	
 func exit_hiding() -> void:
 	is_hiding = false
 	animated_sprite_2d.show()
 	animated_sprite_2d.play("idle")
 	set_hiding(false)
-
+	collision_layer = normal_collision_layer
+	
 func set_hiding(value: bool):
 	if is_hiding == value:
 		return
