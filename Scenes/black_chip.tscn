@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://wslajcnlb7fx"]
+
+[ext_resource type="Texture2D" uid="uid://dq4is431ymhmj" path="res://Assets/LibreSprites/chip sheet.png" id="2_ktd2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u21c4"]
+atlas = ExtResource("2_ktd2w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb6br"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u21c4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6br"]
+size = Vector2(2, 1)
+
+[node name="black chip" type="Area2D" unique_id=1374822201]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478260852]
+sprite_frames = SubResource("SpriteFrames_vb6br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40197971]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vb6br")

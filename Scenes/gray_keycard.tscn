@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://j2x7ygg76xyb"]
+
+[ext_resource type="Texture2D" uid="uid://4tfcocdnmc0b" path="res://Assets/LibreSprites/keycards sheet.png" id="1_fwlij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5nk5"]
+atlas = ExtResource("1_fwlij")
+region = Rect2(20, 0, 10, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb6br"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5nk5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6br"]
+size = Vector2(2, 3)
+
+[node name="gray keycard" type="Area2D" unique_id=985584092]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1454280814]
+position = Vector2(3, -16.5)
+scale = Vector2(1, 1.03125)
+sprite_frames = SubResource("SpriteFrames_vb6br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=973732344]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_vb6br")
