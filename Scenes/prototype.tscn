@@ -38,20 +38,19 @@ position = Vector2(1972, -25)
 
 [node name="Label" type="Label" parent="LabelManager" unique_id=198216491]
 offset_left = -493.0
-offset_top = -46.0
-offset_right = -106.0
-offset_bottom = 3.0
+offset_top = -42.0
+offset_right = -169.0
+offset_bottom = -8.666672
 scale = Vector2(0.3, 0.3)
-text = "You can use wasd and 
-arrow keys to move around"
+text = "Use wasd and arrow keys to move around"
 
 [node name="Label2" type="Label" parent="LabelManager" unique_id=909221747]
-offset_left = -306.0
-offset_top = -48.0
-offset_right = 81.0
-offset_bottom = 1.0
+offset_left = -310.0
+offset_top = -46.0
+offset_right = 11.0
+offset_bottom = 3.0
 scale = Vector2(0.3, 0.3)
-text = "You can use E to interact to hide in doors 
+text = "Use E to interact to hide in doors 
 or between machines and under tables"
 
 [node name="Label3" type="Label" parent="LabelManager" unique_id=257352134]
@@ -65,7 +64,7 @@ text = "Beware the robots they will tase you!!!"
 [node name="Label4" type="Label" parent="LabelManager" unique_id=1948894738]
 offset_left = 328.0
 offset_top = -47.0
-offset_right = 715.0
+offset_right = 651.0
 offset_bottom = 2.0
 scale = Vector2(0.3, 0.3)
 text = "The higher the levels you go the faster 
@@ -83,20 +82,20 @@ sometimes machines so you get a higher score"
 [node name="Label6" type="Label" parent="LabelManager" unique_id=1078235922]
 offset_left = -394.00003
 offset_top = 16.0
-offset_right = 141.99997
+offset_right = 54.99997
 offset_bottom = 65.0
 scale = Vector2(0.3, 0.3)
 text = "If there are 3 machines you wont be able to hide between 
-them,  there is too much wiring behind all 3 of them"
+them"
 
 [node name="Label7" type="Label" parent="LabelManager" unique_id=1514410076]
-offset_left = -75.0
-offset_top = -46.0
-offset_right = 461.0
-offset_bottom = 3.0
+offset_left = -106.0
+offset_top = -47.0
+offset_right = 430.66663
+offset_bottom = 28.0
 scale = Vector2(0.3, 0.3)
 text = "Be very careful about the air drone, it will call every single
- robot there is available to the area that it saw you!!"
+ robot there is available to the area"
 
 [node name="BotManager" type="Node" parent="." unique_id=1409331972]
 
