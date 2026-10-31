@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://j2x7ygg76xyb"]
 
 [ext_resource type="Texture2D" uid="uid://4tfcocdnmc0b" path="res://Assets/LibreSprites/keycards sheet.png" id="1_fwlij"]
+[ext_resource type="Script" uid="uid://cymowuuek6vsu" path="res://Scripts/pickup.gd" id="1_i5nk5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i5nk5"]
 atlas = ExtResource("1_fwlij")
@@ -21,6 +22,8 @@ animations = [{
 size = Vector2(2, 3)
 
 [node name="gray keycard" type="Area2D" unique_id=985584092]
+script = ExtResource("1_i5nk5")
+item_id = "gray_keycard"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1454280814]
 position = Vector2(3, -16.5)
@@ -30,3 +33,9 @@ sprite_frames = SubResource("SpriteFrames_vb6br")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=973732344]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_vb6br")
+
+[node name="PickupPrompt" type="Label" parent="." unique_id=2102112509]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "E - Pick up"
