@@ -43,6 +43,7 @@ offset_right = -169.0
 offset_bottom = -8.666672
 scale = Vector2(0.3, 0.3)
 text = "Use wasd and arrow keys to move around"
+paragraph_separator = "/n"
 
 [node name="Label2" type="Label" parent="LabelManager" unique_id=909221747]
 offset_left = -310.0
@@ -52,6 +53,7 @@ offset_bottom = 3.0
 scale = Vector2(0.3, 0.3)
 text = "Use E to interact to hide in doors 
 or between machines and under tables"
+paragraph_separator = "/n"
 
 [node name="Label3" type="Label" parent="LabelManager" unique_id=257352134]
 offset_left = -153.0
@@ -60,6 +62,7 @@ offset_right = 234.0
 offset_bottom = 103.0
 scale = Vector2(0.3, 0.3)
 text = "Beware the robots they will tase you!!!"
+paragraph_separator = "/n"
 
 [node name="Label4" type="Label" parent="LabelManager" unique_id=1948894738]
 offset_left = 328.0
@@ -69,6 +72,7 @@ offset_bottom = 2.0
 scale = Vector2(0.3, 0.3)
 text = "The higher the levels you go the faster 
 and more difficult it will be to evade them"
+paragraph_separator = "/n"
 
 [node name="Label5" type="Label" parent="LabelManager" unique_id=1125810205]
 offset_left = 524.0
@@ -78,6 +82,7 @@ offset_bottom = 53.0
 scale = Vector2(0.3, 0.3)
 text = "You can collect chips from the tables and 
 sometimes machines so you get a higher score"
+paragraph_separator = "/n"
 
 [node name="Label6" type="Label" parent="LabelManager" unique_id=1078235922]
 offset_left = -394.00003
@@ -87,6 +92,7 @@ offset_bottom = 65.0
 scale = Vector2(0.3, 0.3)
 text = "If there are 3 machines you wont be able to hide between 
 them"
+paragraph_separator = "/n"
 
 [node name="Label7" type="Label" parent="LabelManager" unique_id=1514410076]
 offset_left = -106.0
@@ -96,6 +102,7 @@ offset_bottom = 28.0
 scale = Vector2(0.3, 0.3)
 text = "Be very careful about the air drone, it will call every single
  robot there is available to the area"
+paragraph_separator = "/n"
 
 [node name="BotManager" type="Node" parent="." unique_id=1409331972]
 
