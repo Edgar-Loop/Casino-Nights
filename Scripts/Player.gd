@@ -59,12 +59,11 @@ func _physics_process(delta: float) -> void:
 		is_mask = !is_mask
 
 func enter_hiding() -> void:
-	is_hiding = true
 	dash_time_left = 0
 	velocity = Vector2.ZERO
 	animated_sprite_2d.hide()
-	set_hiding(true)
 	collision_layer = 0
+	set_hiding(true)
 	
 func exit_hiding() -> void:
 	is_hiding = false
