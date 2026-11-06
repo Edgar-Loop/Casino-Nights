@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cnxrp55ri8baa"]
+
+[ext_resource type="Texture2D" uid="uid://j2gq2utixe6w" path="res://Assets/LibreSprites/purple chip.png" id="1_m2nny"]
+[ext_resource type="Script" uid="uid://bkehh156tjbs3" path="res://Scenes/purple_chip.gd" id="1_rdaht"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oh2mb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m2nny")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6br"]
+size = Vector2(3, 1)
+
+[node name="purple chip" type="Area2D" unique_id=1218024402]
+collision_mask = 2
+script = ExtResource("1_rdaht")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2034927397]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_oh2mb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30150310]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_vb6br")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
