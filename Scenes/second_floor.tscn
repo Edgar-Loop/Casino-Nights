@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://ca7a2qeku4ikm" path="res://Scenes/table_2_hiding.tscn" id="8_10fiy"]
 [ext_resource type="PackedScene" uid="uid://vuts4vnxyy5a" path="res://Scenes/table_hiding.tscn" id="9_xlq3t"]
 [ext_resource type="PackedScene" uid="uid://dbu56uhwmyhbh" path="res://Scenes/vent.tscn" id="10_vp5j2"]
-[ext_resource type="PackedScene" uid="uid://cnxrp55ri8baa" path="res://Scenes/purple_chip.tscn" id="12_xlq3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi7jk"]
 texture = ExtResource("1_rv2gs")
@@ -116,6 +115,3 @@ position = Vector2(-44, -37)
 
 [node name="janitor_door" parent="InteractableAssests" unique_id=1431494753 instance=ExtResource("6_cpa6n")]
 position = Vector2(507, -33)
-
-[node name="purple chip" parent="InteractableAssests" unique_id=1218024402 instance=ExtResource("12_xlq3t")]
-position = Vector2(-162, 12)
