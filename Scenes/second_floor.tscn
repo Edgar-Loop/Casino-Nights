@@ -140,6 +140,9 @@ position = Vector2(1071, 34)
 [node name="SecurityBot3" parent="bots" unique_id=1677562410 instance=ExtResource("14_f7ndf")]
 position = Vector2(-88, 15)
 
+[node name="SecurityBot4" parent="bots" unique_id=488463702 instance=ExtResource("12_vp5j2")]
+position = Vector2(749, 14)
+
 [node name="Player" parent="." unique_id=1872723064 instance=ExtResource("15_4hk2r")]
 position = Vector2(-282, 19)
 speed = 90
