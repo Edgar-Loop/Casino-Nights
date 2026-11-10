@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bn0v70ekjro5g" path="res://Scenes/security_bot_medium.tscn" id="12_vp5j2"]
 [ext_resource type="PackedScene" uid="uid://bgy1rymqfn5jf" path="res://Scenes/AirSecurityBot.tscn" id="13_4hk2r"]
 [ext_resource type="PackedScene" uid="uid://depvr2m326b2x" path="res://Scenes/security_bot_hard.tscn" id="14_f7ndf"]
+[ext_resource type="PackedScene" uid="uid://ddtfde0llg8ek" path="res://Scenes/player.tscn" id="15_4hk2r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi7jk"]
 texture = ExtResource("1_rv2gs")
@@ -134,7 +135,25 @@ position = Vector2(366, 16)
 position = Vector2(696, -6)
 
 [node name="SecurityBot2" parent="bots" unique_id=1584588725 instance=ExtResource("14_f7ndf")]
-position = Vector2(1146, 12)
+position = Vector2(1071, 34)
 
 [node name="SecurityBot3" parent="bots" unique_id=1677562410 instance=ExtResource("14_f7ndf")]
 position = Vector2(-88, 15)
+
+[node name="SecurityBot4" parent="bots" unique_id=488463702 instance=ExtResource("12_vp5j2")]
+position = Vector2(749, 14)
+
+[node name="Player" parent="." unique_id=1872723064 instance=ExtResource("15_4hk2r")]
+position = Vector2(-282, 19)
+speed = 90
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1790991592]
+position = Vector2(91, -6)
+zoom = Vector2(5.9, 5.9)
+limit_left = -631
+limit_top = -65
+limit_right = 1863
+limit_bottom = 78
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
