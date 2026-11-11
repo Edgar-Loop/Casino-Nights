@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnxrp55ri8baa"]
 
 [ext_resource type="Texture2D" uid="uid://j2gq2utixe6w" path="res://Assets/LibreSprites/purple chip.png" id="1_m2nny"]
-[ext_resource type="Script" uid="uid://bkehh156tjbs3" path="res://Scenes/purple_chip.gd" id="1_rdaht"]
+[ext_resource type="Script" uid="uid://bkehh156tjbs3" path="res://Scripts/purple_chip.gd" id="1_rdaht"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oh2mb"]
 animations = [{
