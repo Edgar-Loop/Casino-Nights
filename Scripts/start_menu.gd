@@ -2,12 +2,15 @@ extends Node2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var menu_buttons: CanvasLayer = $AnimatedSprite2D/MenuButtons
+@onready var dialogue: Node2D = $Dialogue
+@onready var P1: Label = $"Dialogue/1"
 
 @onready var play: Button = $AnimatedSprite2D/MenuButtons/Play
 @onready var settings: Button = $AnimatedSprite2D/MenuButtons/Settings
 @onready var quit: Button = $AnimatedSprite2D/MenuButtons/Quit
 
 func _ready() -> void:
+	dialogue.hide()
 	menu_buttons.hide()
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 	play.pressed.connect(_on_play_pressed)
@@ -23,7 +26,9 @@ func _on_animation_finished():
 		menu_buttons.show()
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/prototype.tscn")
+	P1.show()
+	
+	#get_tree().change_scene_to_file("res://Scenes/prototype.tscn")
 
 func _on_settings_pressed():
 	print("open settings")
