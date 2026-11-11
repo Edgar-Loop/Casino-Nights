@@ -60,6 +60,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_r7wmg"]
+specular_color = Color(0.3270539, 0.076561324, 0.56711894, 1)
+
 [node name="StartMenu" type="Node2D" unique_id=824032023]
 script = ExtResource("1_jgtwh")
 
@@ -101,13 +104,24 @@ text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=634590993]
+z_index = 1
 
 [node name="DialogueText" type="Label" parent="Dialogue" unique_id=59479800]
-offset_left = 19.0
-offset_top = 477.00003
-offset_right = 389.0
-offset_bottom = 534.0
+offset_left = 17.0
+offset_top = 471.00003
+offset_right = 387.0
+offset_bottom = 528.0
 scale = Vector2(3, 3)
 theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
 text = "This is a test"
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Dialogue/DialogueText" unique_id=936592526]
+modulate = Color(0.4558012, 0.44212747, 0.44030702, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 0.33333325
+offset_top = -1.0162592e-05
+offset_right = 374.33334
+offset_bottom = 53.333332
+texture = SubResource("CanvasTexture_r7wmg")
