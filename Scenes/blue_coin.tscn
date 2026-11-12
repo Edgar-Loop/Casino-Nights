@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://rsxek7sgoobo"]
 
+[ext_resource type="Script" uid="uid://cymowuuek6vsu" path="res://Scripts/pickup.gd" id="1_0h2ia"]
 [ext_resource type="Texture2D" uid="uid://dq4is431ymhmj" path="res://Assets/LibreSprites/chip sheet.png" id="1_51edu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h2ia"]
@@ -21,6 +22,8 @@ animations = [{
 size = Vector2(2, 1)
 
 [node name="blue coin" type="Area2D" unique_id=887439532]
+script = ExtResource("1_0h2ia")
+item_id = "blue_coin"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327319306]
 sprite_frames = SubResource("SpriteFrames_vb6br")
@@ -28,3 +31,9 @@ sprite_frames = SubResource("SpriteFrames_vb6br")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1613253531]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_vb6br")
+
+[node name="PickupPrompt" type="Label" parent="." unique_id=2093400241]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "E - Pick up"
