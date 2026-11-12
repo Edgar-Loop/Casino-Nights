@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://cyifkmin5y8cn" path="res://Scenes/machine_hiding.tscn" id="9_ma1ii"]
 [ext_resource type="PackedScene" uid="uid://vuts4vnxyy5a" path="res://Scenes/table_hiding.tscn" id="10_f3m8k"]
 [ext_resource type="PackedScene" uid="uid://ca7a2qeku4ikm" path="res://Scenes/table_2_hiding.tscn" id="11_fixtb"]
+[ext_resource type="Script" uid="uid://ckdcdc03lwo4b" path="res://Scripts/to_janitor_room1.gd" id="13_7dhkk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6br"]
+size = Vector2(17, 25)
 
 [node name="Prototype" type="Node2D" unique_id=1481921450]
 
@@ -204,3 +208,13 @@ position = Vector2(560, -10)
 
 [node name="Table2Hiding3" parent="InteractableAssets" unique_id=675495048 instance=ExtResource("11_fixtb")]
 position = Vector2(1232, -11)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2065326179]
+script = ExtResource("13_7dhkk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1327800502]
+position = Vector2(-217.5, -13.5)
+shape = SubResource("RectangleShape2D_vb6br")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
