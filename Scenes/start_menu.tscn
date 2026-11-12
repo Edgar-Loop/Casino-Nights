@@ -61,7 +61,6 @@ animations = [{
 }]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r7wmg"]
-specular_color = Color(0.3270539, 0.076561324, 0.56711894, 1)
 
 [node name="StartMenu" type="Node2D" unique_id=824032023]
 script = ExtResource("1_jgtwh")

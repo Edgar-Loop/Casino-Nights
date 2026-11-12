@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dffx6nmn6iil8"]
 
 [ext_resource type="Script" uid="uid://d2xgvrnx7lww8" path="res://Scripts/level_complete.gd" id="1_onuut"]
+[ext_resource type="AudioStream" uid="uid://bffynci5jm2uo" path="res://Audio/Winner.mp3" id="2_nqaca"]
 [ext_resource type="Texture2D" uid="uid://qk6j1bo6vlrq" path="res://Assets/LibreSprites/elevator-Sheet.png" id="2_onuut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn1xx"]
@@ -103,6 +104,10 @@ animations = [{
 
 [node name="LevelComplete" type="Node2D" unique_id=685382877]
 script = ExtResource("1_onuut")
+
+[node name="Winner" type="AudioStreamPlayer" parent="." unique_id=1198661786]
+stream = ExtResource("2_nqaca")
+volume_db = -20.0
 
 [node name="interact_area" type="Area2D" parent="." unique_id=224253142]
 
