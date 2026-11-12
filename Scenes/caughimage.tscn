@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtd8o67a114sm" path="res://Scripts/caughimage.gd" id="1_emnul"]
 [ext_resource type="Texture2D" uid="uid://c8npjkb5ybqr" path="res://Assets/LibreSprites/Cn BadEndPrototype.png" id="1_w84dc"]
+[ext_resource type="AudioStream" uid="uid://cstyitppx2rqq" path="res://Audio/Loser.mp3" id="3_if0vg"]
 
 [node name="Caughimage" type="Node2D" unique_id=754551091]
 script = ExtResource("1_emnul")
@@ -10,3 +11,7 @@ script = ExtResource("1_emnul")
 position = Vector2(578.5, 326.49997)
 scale = Vector2(3.584375, 2.4960935)
 texture = ExtResource("1_w84dc")
+
+[node name="Loser" type="AudioStreamPlayer" parent="." unique_id=987474914]
+stream = ExtResource("3_if0vg")
+volume_db = -20.0
