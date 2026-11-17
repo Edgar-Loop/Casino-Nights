@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://drm47tlsudfqg" path="res://Scenes/background.tscn" id="1_6koui"]
 [ext_resource type="PackedScene" uid="uid://ddtfde0llg8ek" path="res://Scenes/player.tscn" id="2_3mrnv"]
+[ext_resource type="PackedScene" uid="uid://b4uh35lt51yt4" path="res://Scenes/green_chip.tscn" id="3_2mp60"]
 [ext_resource type="PackedScene" uid="uid://d0f5rl273ryx0" path="res://Scenes/security_bot.tscn" id="3_uurmw"]
 [ext_resource type="PackedScene" uid="uid://bgy1rymqfn5jf" path="res://Scenes/AirSecurityBot.tscn" id="3_xnjhx"]
 [ext_resource type="PackedScene" uid="uid://bn0v70ekjro5g" path="res://Scenes/security_bot_medium.tscn" id="4_3mrnv"]
+[ext_resource type="PackedScene" uid="uid://rsxek7sgoobo" path="res://Scenes/blue_coin.tscn" id="4_40fcm"]
 [ext_resource type="PackedScene" uid="uid://depvr2m326b2x" path="res://Scenes/security_bot_hard.tscn" id="5_uurmw"]
 [ext_resource type="PackedScene" uid="uid://crwn6cavrvotv" path="res://Scenes/janitor_door.tscn" id="6_dig14"]
 [ext_resource type="PackedScene" uid="uid://dffx6nmn6iil8" path="res://Scenes/level_complete.tscn" id="7_7kyyp"]
@@ -13,9 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://vuts4vnxyy5a" path="res://Scenes/table_hiding.tscn" id="10_f3m8k"]
 [ext_resource type="PackedScene" uid="uid://ca7a2qeku4ikm" path="res://Scenes/table_2_hiding.tscn" id="11_fixtb"]
 [ext_resource type="Script" uid="uid://ckdcdc03lwo4b" path="res://Scripts/to_janitor_room1.gd" id="13_7dhkk"]
+[ext_resource type="Script" uid="uid://d2uga1x6idlmm" path="res://Scripts/level 2.gd" id="14_bsdhg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6br"]
 size = Vector2(17, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh2mb"]
+size = Vector2(24, 26)
 
 [node name="Prototype" type="Node2D" unique_id=1481921450]
 
@@ -34,6 +40,14 @@ limit_bottom = 63
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="Collectables" type="Node" parent="." unique_id=774147438]
+
+[node name="green chip" parent="Collectables" unique_id=1422851764 instance=ExtResource("3_2mp60")]
+position = Vector2(579, -10)
+
+[node name="blue coin" parent="Collectables" unique_id=887439532 instance=ExtResource("4_40fcm")]
+position = Vector2(605, 40)
 
 [node name="LevelComplete" parent="." unique_id=685382877 instance=ExtResource("7_7kyyp")]
 position = Vector2(1972, -25)
@@ -216,5 +230,15 @@ script = ExtResource("13_7dhkk")
 position = Vector2(-217.5, -13.5)
 shape = SubResource("RectangleShape2D_vb6br")
 
+[node name="Level 2" type="Area2D" parent="." unique_id=1569834159]
+position = Vector2(1973, -25)
+script = ExtResource("14_bsdhg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level 2" unique_id=163152185]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_oh2mb")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Level 2" to="Level 2" method="_on_body_entered"]
+[connection signal="body_exited" from="Level 2" to="Level 2" method="_on_body_exited"]
