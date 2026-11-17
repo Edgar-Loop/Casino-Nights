@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://bgy1rymqfn5jf" path="res://Scenes/AirSecurityBot.tscn" id="13_4hk2r"]
 [ext_resource type="PackedScene" uid="uid://depvr2m326b2x" path="res://Scenes/security_bot_hard.tscn" id="14_f7ndf"]
 [ext_resource type="PackedScene" uid="uid://ddtfde0llg8ek" path="res://Scenes/player.tscn" id="15_4hk2r"]
+[ext_resource type="PackedScene" uid="uid://b4uh35lt51yt4" path="res://Scenes/green_chip.tscn" id="16_236nw"]
+[ext_resource type="PackedScene" uid="uid://xk3kstp0osga" path="res://Scenes/red_chip.tscn" id="17_caro5"]
+[ext_resource type="Script" uid="uid://beub346rlnfm" path="res://Scripts/level_3.gd" id="18_67t2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi7jk"]
 texture = ExtResource("1_rv2gs")
@@ -77,6 +80,9 @@ sources/0 = SubResource("TileSetAtlasSource_icp47")
 sources/1 = SubResource("TileSetAtlasSource_10fiy")
 sources/2 = SubResource("TileSetAtlasSource_xlq3t")
 sources/3 = SubResource("TileSetAtlasSource_vp5j2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6br"]
+size = Vector2(22, 25)
 
 [node name="second floor" type="Node2D" unique_id=1331553416]
 
@@ -149,11 +155,39 @@ speed = 90
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1790991592]
 position = Vector2(91, -6)
-zoom = Vector2(5.9, 5.9)
-limit_left = -631
-limit_top = -65
-limit_right = 1863
-limit_bottom = 78
+zoom = Vector2(4.5, 4.5)
+limit_left = -288
+limit_top = -64
+limit_right = 1249
+limit_bottom = 79
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="Collectables" type="Node" parent="." unique_id=1662538464]
+
+[node name="green chip" parent="Collectables" unique_id=1422851764 instance=ExtResource("16_236nw")]
+position = Vector2(-171, 56)
+
+[node name="green chip2" parent="Collectables" unique_id=2005249736 instance=ExtResource("16_236nw")]
+position = Vector2(40, 49)
+
+[node name="red chip" parent="Collectables" unique_id=379120863 instance=ExtResource("17_caro5")]
+position = Vector2(150, 49)
+
+[node name="red chip2" parent="Collectables" unique_id=170775901 instance=ExtResource("17_caro5")]
+position = Vector2(580, 1)
+
+[node name="green chip3" parent="Collectables" unique_id=2008523326 instance=ExtResource("16_236nw")]
+position = Vector2(838, 50)
+
+[node name="Level 3" type="Area2D" parent="." unique_id=1895713021]
+position = Vector2(1218, -38)
+script = ExtResource("18_67t2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level 3" unique_id=1107783260]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_vb6br")
+
+[connection signal="body_entered" from="Level 3" to="Level 3" method="_on_body_entered"]
+[connection signal="body_exited" from="Level 3" to="Level 3" method="_on_body_exited"]

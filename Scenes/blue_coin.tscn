@@ -35,5 +35,5 @@ shape = SubResource("RectangleShape2D_vb6br")
 [node name="PickupPrompt" type="Label" parent="." unique_id=2093400241]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 6
 text = "E - Pick up"
