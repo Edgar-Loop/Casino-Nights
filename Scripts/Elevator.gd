@@ -3,6 +3,8 @@ extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interact_area: Area2D = $interact_area
 
+@onready var winner: AudioStreamPlayer = $Winner
+
 var player_nearby := false
 var door_activating := false
 var player: CharacterBody2D = null
@@ -16,6 +18,9 @@ func _process(_delta: float) -> void:
 		door_activating = true
 
 		animated_sprite_2d.play("Open")
+		Music.stop()
+		winner.play()
+
 		await animated_sprite_2d.animation_finished
 
 		if is_instance_valid(player):
@@ -26,8 +31,8 @@ func _process(_delta: float) -> void:
 
 		animated_sprite_2d.play("Close")
 		await animated_sprite_2d.animation_finished
-
-		get_tree().change_scene_to_file("res://Scenes/endimage.tscn")
+		await winner.finished
+		Levelmanager.go_to_next_level()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

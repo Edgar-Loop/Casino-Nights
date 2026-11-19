@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ces0x4dr80no1" path="res://Assets/LibreSprites/AIrSecurityBot Sheet CN.png" id="1_eb3yj"]
 [ext_resource type="Script" uid="uid://dyh1tql5nif6v" path="res://Scripts/air_security_bot.gd" id="1_o81d3"]
+[ext_resource type="AudioStream" uid="uid://2w27syoedenu" path="res://Audio/Airdroneflyingsound.mp3" id="3_sd4xy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o81d3"]
 atlas = ExtResource("1_eb3yj")
@@ -63,3 +64,8 @@ shape = SubResource("CapsuleShape2D_it5su")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687577994]
 position = Vector2(-0.5, -50)
 shape = SubResource("RectangleShape2D_gavrl")
+
+[node name="Airdroneflyingsound" type="AudioStreamPlayer" parent="." unique_id=451520329]
+stream = ExtResource("3_sd4xy")
+volume_db = -10.0
+parameters/looping = true

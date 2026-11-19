@@ -15,11 +15,21 @@ run/main_scene="uid://bgomaj1ten2an"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ovqmogtf2tvr"
+
+[autoload]
+
+Music="*uid://dx55cjwwjqx4g"
+Levelmanager="*uid://bcbhxo2gavapb"
+
 [file_customization]
 
 folder_colors={
 "res://Assets/": "green",
 "res://Audio/": "purple",
+"res://Levels/": "pink",
 "res://Resources/": "red",
 "res://Scenes/": "blue",
 "res://Scripts/": "orange"

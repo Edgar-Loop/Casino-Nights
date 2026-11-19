@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://wslajcnlb7fx"]
 
+[ext_resource type="Script" uid="uid://cymowuuek6vsu" path="res://Scripts/pickup.gd" id="1_h0pt4"]
 [ext_resource type="Texture2D" uid="uid://dq4is431ymhmj" path="res://Assets/LibreSprites/chip sheet.png" id="2_ktd2w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u21c4"]
@@ -21,6 +22,7 @@ animations = [{
 size = Vector2(2, 1)
 
 [node name="black chip" type="Area2D" unique_id=1374822201]
+script = ExtResource("1_h0pt4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478260852]
 sprite_frames = SubResource("SpriteFrames_vb6br")
@@ -28,3 +30,11 @@ sprite_frames = SubResource("SpriteFrames_vb6br")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40197971]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_vb6br")
+
+[node name="PickupPrompt" type="Label" parent="." unique_id=1964620965]
+offset_left = -48.0
+offset_top = -41.0
+offset_right = 50.0
+offset_bottom = -13.0
+theme_override_font_sizes/font_size = 20
+text = "E - Pick up"
