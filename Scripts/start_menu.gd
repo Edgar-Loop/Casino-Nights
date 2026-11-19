@@ -8,6 +8,7 @@ extends Node2D
 @onready var play: Button = $AnimatedSprite2D/MenuButtons/Play
 @onready var settings: Button = $AnimatedSprite2D/MenuButtons/Settings
 @onready var quit: Button = $AnimatedSprite2D/MenuButtons/Quit
+@onready var credits: Button = $AnimatedSprite2D/MenuButtons/Credits
 
 var dialogue_lines: Array[String] = [
 	"Mr. A (Phone): Hello? You there?",
@@ -40,6 +41,7 @@ func _ready() -> void:
 	play.pressed.connect(_on_play_pressed)
 	settings.pressed.connect(_on_settings_pressed)
 	quit.pressed.connect(_on_quit_pressed)
+	credits.pressed.connect(_on_credits_pressed)
 
 	animated_sprite_2d.play("Intro")
 
@@ -79,3 +81,6 @@ func _on_settings_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")

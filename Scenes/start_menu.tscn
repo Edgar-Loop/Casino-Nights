@@ -102,6 +102,14 @@ scale = Vector2(0.5, 0.5)
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
+[node name="Credits" type="Button" parent="AnimatedSprite2D/MenuButtons" unique_id=240211994]
+offset_left = 130.375
+offset_top = 72.5
+offset_right = 193.375
+offset_bottom = 103.5
+scale = Vector2(0.2, 0.2)
+text = "Credits"
+
 [node name="Dialogue" type="Node2D" parent="." unique_id=634590993]
 z_index = 1
 
