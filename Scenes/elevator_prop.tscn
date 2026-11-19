@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://b5j5ueqw8lls7"]
+
+[ext_resource type="Texture2D" uid="uid://qk6j1bo6vlrq" path="res://Assets/LibreSprites/elevator-Sheet.png" id="1_h2wo7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqaca"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuta2"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8x36"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mfcs"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_202tw"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ljw4"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5637u"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po76k"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eeke"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b7js"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsavu"]
+atlas = ExtResource("1_h2wo7")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7lc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqaca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuta2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8x36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mfcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_202tw")
+}],
+"loop": 0,
+"name": &"Close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ljw4")
+}],
+"loop": 0,
+"name": &"Normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5637u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po76k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eeke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b7js")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsavu")
+}],
+"loop": 0,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[node name="Elevator_prop" type="Node2D" unique_id=161873961]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1313223367]
+sprite_frames = SubResource("SpriteFrames_i7lc4")
+animation = &"Close"
+autoplay = "Close"

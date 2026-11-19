@@ -10,4 +10,5 @@ func _ready() -> void:
 	await get_tree().create_timer(time_before_return).timeout
 	
 	Music.play()
-	get_tree().change_scene_to_file("res://Scenes/prototype.tscn")
+	var current_scene = Levelmanager.level_scenes[Levelmanager.current_level]
+	get_tree().change_scene_to_file(current_scene)

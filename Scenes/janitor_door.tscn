@@ -85,7 +85,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf4ix"]
-size = Vector2(15, 21)
+size = Vector2(13, 21)
 
 [node name="janitor_door" type="Node2D" unique_id=1431494753]
 script = ExtResource("1_j1anm")
@@ -98,5 +98,11 @@ autoplay = "closed"
 [node name="interact_area" type="Area2D" parent="." unique_id=981479854]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_area" unique_id=912510649]
-position = Vector2(-0.5, 2.5)
+position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_tf4ix")
+
+[node name="EnterPoint" type="Marker2D" parent="." unique_id=1889175407]
+position = Vector2(0, 11)
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=1854120577]
+position = Vector2(0, 11)

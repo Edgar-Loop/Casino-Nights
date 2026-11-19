@@ -155,7 +155,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_hiding:
 		return
 
-	get_tree().change_scene_to_file("res://Scenes/caughimage.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Caught.tscn")
 
 func investigate(target_position: Vector2) -> void:
 	investigation_target = target_position
