@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://hyg7yuunra1p"]
+
+[ext_resource type="Script" uid="uid://dtd8o67a114sm" path="res://Scripts/caughimage.gd" id="1_5wrcg"]
+[ext_resource type="Texture2D" uid="uid://mts3ogotknvk" path="res://Assets/LibreSprites/GameOver CN.png" id="3_5wrcg"]
+[ext_resource type="AudioStream" uid="uid://cstyitppx2rqq" path="res://Audio/Loser.mp3" id="3_itxwe"]
+
+[node name="Caught" type="Node2D" unique_id=754551091]
+script = ExtResource("1_5wrcg")
+
+[node name="Loser" type="AudioStreamPlayer" parent="." unique_id=987474914]
+stream = ExtResource("3_itxwe")
+volume_db = -20.0
+
+[node name="GameOverCn" type="Sprite2D" parent="." unique_id=1404705477]
+position = Vector2(570, 323.5)
+scale = Vector2(4.992187, 5.0390625)
+texture = ExtResource("3_5wrcg")
+
+[node name="Game over" type="Label" parent="." unique_id=1288942411]
+offset_left = 342.0
+offset_top = -12.0
+offset_right = 430.19998
+offset_bottom = 12.399998
+scale = Vector2(5, 5)
+text = "Game Over"
+
+[node name="Caught" type="Label" parent="." unique_id=1076573160]
+offset_left = 475.0
+offset_top = 582.0
+offset_right = 591.0
+offset_bottom = 605.0
+scale = Vector2(1.5, 1.5)
+text = "You got caught"

@@ -29,6 +29,7 @@ Levelmanager="*uid://bcbhxo2gavapb"
 folder_colors={
 "res://Assets/": "green",
 "res://Audio/": "purple",
+"res://Levels/": "pink",
 "res://Resources/": "red",
 "res://Scenes/": "blue",
 "res://Scripts/": "orange"

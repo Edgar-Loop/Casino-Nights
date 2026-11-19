@@ -61,7 +61,7 @@ func show_dialogue_line() -> void:
 	else:
 		dialogue_active = false
 		dialogue.hide()
-		get_tree().change_scene_to_file("res://Scenes/prototype.tscn")
+		get_tree().change_scene_to_file("res://Levels/first_floor.tscn")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if dialogue_active and event is InputEventMouseButton:

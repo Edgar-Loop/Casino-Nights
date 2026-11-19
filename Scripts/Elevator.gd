@@ -20,6 +20,7 @@ func _process(_delta: float) -> void:
 		animated_sprite_2d.play("Open")
 		Music.stop()
 		winner.play()
+
 		await animated_sprite_2d.animation_finished
 
 		if is_instance_valid(player):
@@ -31,7 +32,7 @@ func _process(_delta: float) -> void:
 		animated_sprite_2d.play("Close")
 		await animated_sprite_2d.animation_finished
 		await winner.finished
-		get_tree().change_scene_to_file("res://Scenes/second_floor.tscn")
+		Levelmanager.go_to_next_level()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
