@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ca7a2qeku4ikm" path="res://Scenes/table_2_hiding.tscn" id="8_10fiy"]
 [ext_resource type="PackedScene" uid="uid://vuts4vnxyy5a" path="res://Scenes/table_hiding.tscn" id="9_xlq3t"]
 [ext_resource type="PackedScene" uid="uid://dbu56uhwmyhbh" path="res://Scenes/vent.tscn" id="10_vp5j2"]
+[ext_resource type="PackedScene" uid="uid://dcmmn46i64yg1" path="res://Scenes/janitor_room.tscn" id="11_lt5m3"]
 [ext_resource type="PackedScene" uid="uid://bn0v70ekjro5g" path="res://Scenes/security_bot_medium.tscn" id="12_vp5j2"]
 [ext_resource type="PackedScene" uid="uid://bgy1rymqfn5jf" path="res://Scenes/AirSecurityBot.tscn" id="13_4hk2r"]
 [ext_resource type="PackedScene" uid="uid://depvr2m326b2x" path="res://Scenes/security_bot_hard.tscn" id="14_f7ndf"]
@@ -163,6 +164,7 @@ position = Vector2(-44, -37)
 
 [node name="janitor_door" parent="InteractableAssests" unique_id=1431494753 instance=ExtResource("6_cpa6n")]
 position = Vector2(507, -33)
+closet_scene = ExtResource("11_lt5m3")
 
 [node name="Table2Hiding3" parent="InteractableAssests" unique_id=1526195429 instance=ExtResource("8_10fiy")]
 position = Vector2(1072, -16)

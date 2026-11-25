@@ -79,11 +79,15 @@ func enter_room(player) -> void:
 
 	var closet_camera = closet_instance.get_node("janitor_cam") as Camera2D
 
-	if closet_camera.limit_top != -1:
-		closet_camera.limit_top -= 320
+	var room_offset = closet_instance.global_position
 
-	if closet_camera.limit_bottom != -1:
-		closet_camera.limit_bottom -= 320
+	var camera_adjustment = Vector2(215, 15)
+
+	closet_camera.limit_left += int(room_offset.x + camera_adjustment.x)
+	closet_camera.limit_right += int(room_offset.x + camera_adjustment.x)
+
+	closet_camera.limit_top += int(room_offset.y + camera_adjustment.y)
+	closet_camera.limit_bottom += int(room_offset.y + camera_adjustment.y)
 
 	var destination = inside_door.get_node("EnterPoint") as Marker2D
 	player.global_position = destination.global_position
