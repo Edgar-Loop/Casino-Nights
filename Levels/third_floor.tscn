@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vuts4vnxyy5a" path="res://Scenes/table_hiding.tscn" id="5_htff4"]
 [ext_resource type="PackedScene" uid="uid://ca7a2qeku4ikm" path="res://Scenes/table_2_hiding.tscn" id="6_xlgt8"]
 [ext_resource type="PackedScene" uid="uid://crwn6cavrvotv" path="res://Scenes/janitor_door.tscn" id="7_v5yck"]
+[ext_resource type="PackedScene" uid="uid://dcmmn46i64yg1" path="res://Scenes/janitor_room.tscn" id="7_vnmgl"]
 [ext_resource type="PackedScene" uid="uid://depvr2m326b2x" path="res://Scenes/security_bot_hard.tscn" id="8_xqx62"]
 [ext_resource type="PackedScene" uid="uid://bgy1rymqfn5jf" path="res://Scenes/AirSecurityBot.tscn" id="9_jkxew"]
 [ext_resource type="PackedScene" uid="uid://bn0v70ekjro5g" path="res://Scenes/security_bot_medium.tscn" id="10_ovo63"]
@@ -238,7 +239,8 @@ position = Vector2(239, 117)
 position = Vector2(312, 116)
 
 [node name="janitor_door" parent="interactables" unique_id=1431494753 instance=ExtResource("7_v5yck")]
-position = Vector2(121, -19)
+position = Vector2(121, -17)
+closet_scene = ExtResource("7_vnmgl")
 
 [node name="robots" type="Node" parent="." unique_id=555489700]
 
