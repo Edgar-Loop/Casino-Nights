@@ -141,13 +141,15 @@ func leave_room(player) -> void:
 
 	var room_to_remove = closet_instance
 	var closet_camera = player.get_node_or_null("janitor_cam")
-
+	
+	outside_door.player_camera.enabled = true
+	outside_door.player_camera.make_current()
+	
 	if is_instance_valid(closet_camera) and is_instance_valid(room_to_remove):
 		closet_camera.enabled = false
 		closet_camera.reparent(room_to_remove)
 
-	outside_door.player_camera.enabled = true
-	outside_door.player_camera.make_current()
+
 
 	outside_door.set("other_door", null)
 	outside_door.set("closet_instance", null)

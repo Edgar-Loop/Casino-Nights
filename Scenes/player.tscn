@@ -132,3 +132,44 @@ speed_scale = 1.4
 light_mask = 3
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_fixtb")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1289748885]
+layer = 10
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+
+[node name="Control" type="Control" parent="HUD" unique_id=1112372285]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MaskItem" type="TextureRect" parent="HUD/Control" unique_id=1783715845]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47800002
+anchor_top = 0.48000002
+anchor_right = 0.47800002
+anchor_bottom = 0.48000002
+offset_left = -550.656
+offset_top = -311.04
+offset_right = -486.656
+offset_bottom = -247.04001
+scale = Vector2(0.5, 0.5)
+stretch_mode = 5
+
+[node name="TaserItem" type="TextureRect" parent="HUD/Control" unique_id=647459016]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47800002
+anchor_top = 0.48000002
+anchor_right = 0.47800002
+anchor_bottom = 0.48000002
+offset_left = -538.656
+offset_top = -320.84
+offset_right = -474.656
+offset_bottom = -256.84
+scale = Vector2(0.8, 0.8)
+stretch_mode = 5
