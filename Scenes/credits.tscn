@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b644oiy8ntev6"]
 
-[ext_resource type="Script" uid="uid://cj4nribs54k10" path="res://Scenes/credits.gd" id="1_gryuy"]
+[ext_resource type="Script" uid="uid://cj4nribs54k10" path="res://Scripts/credits.gd" id="1_gryuy"]
 [ext_resource type="Texture2D" uid="uid://dg4360oadjggo" path="res://Assets/LibreSprites/black background.png" id="1_nm7lk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1t8d"]
