@@ -118,7 +118,7 @@ paragraph_separator = "/n"
 [node name="BotManager" type="Node" parent="." unique_id=1409331972]
 
 [node name="SecurityBot3" parent="BotManager" unique_id=1842787356 groups=["Robots"] instance=ExtResource("6_b7l6e")]
-position = Vector2(-105, 19)
+position = Vector2(-39, 49)
 
 [node name="SecurityBot" parent="BotManager" unique_id=1199847749 groups=["Robots"] instance=ExtResource("7_bn1sb")]
 z_index = 2

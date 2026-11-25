@@ -6,6 +6,9 @@ signal hiding_changed(is_hiding: bool)
 @export var dash_speed: float = 180
 @export var dash_duration: float = .15
 @export var dash_cooldown: float = 1
+@onready var mask_item: TextureRect = $HUD/Control/MaskItem
+@onready var taser_item: TextureRect = $HUD/Control/TaserItem
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -77,3 +80,23 @@ func set_hiding(value: bool):
 		return
 	is_hiding = value
 	hiding_changed.emit(is_hiding)
+
+func show_pickup_notification(item_name: String, item_texture: Texture2D) -> void:
+	print("Pickup received: ", item_name)
+
+	if item_texture == null:
+		print("Texture is empty!")
+		return
+
+	if item_name == "Mask":
+		mask_item.texture = item_texture
+		mask_item.visible = true
+		print("Mask item shown")
+
+	elif item_name == "Taser":
+		taser_item.texture = item_texture
+		taser_item.visible = true
+		print("Taser item shown")
+
+	else:
+		print("Item name doesn't match: ", item_name)

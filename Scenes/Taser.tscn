@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ba801yj06o0lj"]
+
+[ext_resource type="Texture2D" uid="uid://sgk0fpfdecmn" path="res://Assets/LibreSprites/Taser.png" id="1_1xpdq"]
+[ext_resource type="Script" uid="uid://r4oufqrejmlg" path="res://Scripts/taser.gd" id="1_x1rcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7wmg"]
+size = Vector2(6, 4)
+
+[node name="Area2D" type="Area2D" unique_id=2054470495]
+script = ExtResource("1_x1rcq")
+item_texture = ExtResource("1_1xpdq")
+
+[node name="Taser" type="Sprite2D" parent="." unique_id=713984896]
+texture = ExtResource("1_1xpdq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1178094861]
+shape = SubResource("RectangleShape2D_r7wmg")

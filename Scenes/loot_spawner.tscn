@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bt5isnhsab0he"]
+
+[ext_resource type="Script" uid="uid://cla4753pav068" path="res://Scripts/loot_spawner.gd" id="1_8i0n2"]
+
+[node name="LootSpawner" type="Node2D" unique_id=530305774]
+script = ExtResource("1_8i0n2")
+
+[node name="SpawnItem" type="Marker2D" parent="." unique_id=1256289511]
