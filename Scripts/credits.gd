@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var Return: Button = $Return
 
-
 func _ready() -> void:
 	Return.pressed.connect(_on_return_pressed)
 
